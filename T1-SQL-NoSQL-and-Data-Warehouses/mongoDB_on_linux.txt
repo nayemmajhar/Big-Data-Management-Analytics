@@ -1,0 +1,47 @@
+How to install mongodb on Linux
+
+sudo apt remove --autoremove mongodb-org
+sudo apt-get install gnupg
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+
+sudo rm /etc/apt/sources.list.d/mongodb*.list
+sudo apt update
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+
+lsb_release -dc # uncomment and execute the related command for your OS version
+--# echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list # Ubuntu 20 LTS focal
+--# echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list # Ubuntu 18 LTS bionic
+--# echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list # Ubuntu 16 LTS xenial
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+
+#sudo rm -rf /tmp/mongodb-27017.sock
+sudo service mongod start
+sudo systemctl daemon-reload
+sudo systemctl status mongod # "activate (running)" should be shown -> to end enter "q"
+sudo mongo --eval 'db.runCommand({ connectionStatus: 1 })' # status "ok" should be shown
+
+#sudo service mongod stop
+
+#sudo rm -rf /tmp/mongodb-27017.sock
+mongo
+show dbs # lists the current databases in mongodb
+
+--# in case you face errors during installation or mongodb restart check if they are among those:
+
+--#### mongod status=14:
+sudo chown -R mongodb:mongodb /var/lib/mongodb
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+sudo service mongod restart
+
+--#### mongod error setting up listener error 9001:
+--#### econnerr
+sudo lsof -iTCP -sTCP:LISTEN -n -P
+sudo kill
+
+--#### if you want to clean your system from mongodb and reinstall mongodb from scratch:
+sudo service mongod stop
+sudo apt-get purge mongodb-org*
+sudo rm -r /var/log/mongodb
+sudo rm -r /var/lib/mongodb

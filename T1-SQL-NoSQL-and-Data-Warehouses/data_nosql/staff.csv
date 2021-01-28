@@ -1,0 +1,10 @@
+staffid;name;street;zip;place;datebirth;status;superior;salary;mark;job
+1;Mary Foster;Ebertstr 28;93051;Regensburg;1979-07-05;marr;;4800;2;Manager
+2;Anne Kraus;Kramgasse 5;93047;Regensburg;1975-07-09;sngl;1;2300;3;Agent
+4;Heinz Rolle;In der Au 5;90455;Nuernberg;1957-10-12;sngl;1;3300;3;Secretary
+5;Johanna Koster;Wachtelstr 7;90427;Nuernberg;1984-02-07;divr;1;2100;5;Agent
+6;Marianne Lambert;Fraunhofer Str 3;92224;Landshut;1974-05-22;marr;;4100;1;Master
+3;Ursula Rank;Dreieichstr 12;60594;Frankfurt;1967-09-04;marr;6;2700;1;Clerc
+7;Thomas Noster;Mahlergasse 10;93047;Regensburg;1972-09-17;marr;6;2500;5;Labourer
+8;Renate Wolters;Lessingstr 9;86159;Augsburg;1979-07-14;sngl;1;3300;4;Clerc
+9;Ernst Patch;Olgastr 99;70180;Stuttgart;1992-03-29;sngl;6;800;;Apprentice

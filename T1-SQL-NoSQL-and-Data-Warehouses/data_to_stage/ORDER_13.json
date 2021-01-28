@@ -1,0 +1,28 @@
+{
+    "ORDER": {
+        "CUSTID": 109,
+        "ORDERDATE": "2002-01-02",
+        "STAFFID": 8,
+        "ORDID": 13,
+        "ORDERPOSITIONS": [
+            {
+                "QUANTITY": 14,
+                "ARTID": 500103,
+                "TOTALPRICE": 700.0,
+                "POSID": 32
+            },
+            {
+                "QUANTITY": 6,
+                "ARTID": 300031,
+                "TOTALPRICE": 1164.0,
+                "POSID": 33
+            },
+            {
+                "QUANTITY": 4,
+                "ARTID": 500011,
+                "TOTALPRICE": 16.0,
+                "POSID": 34
+            }
+        ]
+    }
+}
